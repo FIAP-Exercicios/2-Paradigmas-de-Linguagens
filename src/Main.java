@@ -3,24 +3,28 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
-        int input;
+        Aluno aluno = new Aluno();
+        double media;
 
-        System.out.println("Digite o número: ");
-        input=sc.nextInt();
 
-        while(true){
-                System.out.println(input+" ");
-            if (input == 1) break;
+        System.out.print("Me diga seu nome--> ");
+        aluno.nome= sc.nextLine();
 
-            else if (input % 2 != 0){
-                input= 3*input+1;
-            }
-            else {
-                input= input/2;
-            }
+        System.out.println("Me informe--> ");
+        aluno.curso=sc.nextLine();
 
-        }
+        System.out.println("Me fale seu rm--> ");
+        aluno.rm=sc.nextInt();
 
+        System.out.println("Me de a sua primeira 1° nota--> ");
+        aluno.nota1= sc.nextDouble();
+        System.out.println("Me de a sua primeira 2° nota--> ");
+        aluno.nota2= sc.nextDouble();
+
+        media= aluno.media();
+        System.out.println(media);
+        aluno.situacao();
+        aluno.imprimir();
 
 
     }
